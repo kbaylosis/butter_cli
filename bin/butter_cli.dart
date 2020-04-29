@@ -6,75 +6,105 @@ import 'package:butter_cli/butter_cli.dart';
 
 const version = '0.0.1';
 
-void main(List<String> arguments) {
-  final parser = ArgParser();
-  parser.addOption('destination', abbr: 'd');
-  parser.addFlag('help', abbr: 'h');
-  parser.addOption('module', abbr: 'm');
-  parser.addOption('name', abbr: 'n');
-  parser.addFlag('skeleton', abbr: 's');
-  parser.addOption('type', abbr: 't');
+enum ExitCode {
+  SUCCESS,
+  WARNING,
+  ERROR,
+}
 
-  var results = parser.parse(arguments);
-  String dest = results['destination'] ?? '.';
+ExitCode main(List<String> arguments) {
+  try {
+    final parser = ArgParser();
+    parser.addOption('destination', abbr: 'd');
+    parser.addFlag('help', abbr: 'h');
+    parser.addOption('module', abbr: 'm');
+    parser.addOption('name', abbr: 'n');
+    parser.addFlag('skeleton', abbr: 's');
+    parser.addOption('type', abbr: 't');
 
-  print('Butter CLI v${version}');
-  
-  if (results['help']) {
-    showHelp();
-    return;
-  }
+    var results = parser.parse(arguments);
+    String dest = results['destination'] ?? '.';
 
-  if (results['skeleton']) {
-    print('This will generate skelatal files of the butter framework in:');
-    print(dest);
-    print('');
-    stdout.write('Do you want to proceed? <y/n> ');
-    var confirm = stdin.readLineSync();
-    if (confirm.trim().toLowerCase() == 'y') {
-      Scaffolding(dest).generate();
-    } else {
-      print('');
-      print('---Generated nothing---');
-      return;
-    }
-  } else {
-    String type = results['type'];
-    String module = results['module'];
-    String name = results['name'];
-    var article = type == 'action' ? 'an' : 'a';
+    print('Butter CLI v${version}');
     
-    print('This will generate ${article} ${type} in your butter project in:');
-    print(dest);
-    stdout.write('Do you want to proceed? <y/n> ');
-    var confirm = stdin.readLineSync();
-    if (confirm.trim().toLowerCase() == 'n') {
-      print('');
-      print('---Generated nothing---');
-      return;
+    if (results['help']) {
+      showHelp();
+      return ExitCode.SUCCESS;
     }
 
-    switch(type) {
-    case 'module':
-      Module(module, dest).generate();
-      break;
-    case 'page':
-      Page(module, dest).generate(name);
-      break; 
-    case 'action':
-      Action(module, dest).generate(name);
-      break;
-    default:
+    if (results['skeleton']) {
+      print('This will generate skelatal files of the butter framework in:');
+      print(dest);
       print('');
-      print('---Generated nothing---');
-      return;
+      do {
+        stdout.write('Do you want to proceed? <y/n> ');
+        var confirm = stdin.readLineSync();
+        if (confirm.trim().toLowerCase() == 'y') {
+          Scaffolding(dest).generate();
+          break;
+        } else if(confirm.trim().toLowerCase() == 'n') {
+          print('');
+          print('---Generated nothing---');
+          return ExitCode.WARNING;
+        }
+      } while(true);
+
+    } else {
+      String type = results['type'];
+      String module = results['module'];
+      String name = results['name'];
+      var article = type == 'action' ? 'an' : 'a';
+
+      if (type == null) {
+        showHelp();
+        return ExitCode.WARNING;
+      }
+      
+      print('This will generate ${article} ${type} in your butter project in:');
+      print(dest);
+      print('');
+      do {
+        stdout.write('Do you want to proceed? <y/n> ');
+        var confirm = stdin.readLineSync();
+        if (confirm.trim().toLowerCase() == 'y') {
+          break;
+        } else if (confirm.trim().toLowerCase() == 'n') {
+          print('');
+          print('---Generated nothing---');
+          return ExitCode.WARNING;
+        }
+      } while(true);
+
+      switch(type) {
+      case 'module':
+        Module(module, dest).generate();
+        break;
+      case 'page':
+        Page(module, dest).generate(name);
+        break; 
+      case 'action':
+        Action(module, dest).generate(name);
+        break;
+      default:
+        print('');
+        print('---Generated nothing---');
+        return ExitCode.ERROR;
+      }
     }
+
+    showLogo();
+    print('');
+    print('Success! Happy coding! •ᴗ•');
+    print('');
+
+    return ExitCode.SUCCESS;
+  } catch(e) {
+    print('');
+    print('Something went wrong... (╥_╥)');
+    print('');
+    print(e);
+    return ExitCode.ERROR; 
   }
-
-  showLogo();
-  print('');
-  print('Success! Happy coding! •ᴗ•');
-  print('');
 }
 
 void showLogo() {
