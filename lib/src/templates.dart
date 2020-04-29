@@ -1,4 +1,3 @@
-
 import 'package:recase/recase.dart';
 
 class Templates {

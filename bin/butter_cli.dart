@@ -26,7 +26,7 @@ ExitCode main(List<String> arguments) {
     String dest = results['destination'] ?? '.';
 
     print('Butter CLI v${version}');
-    
+
     if (results['help']) {
       showHelp();
       return ExitCode.SUCCESS;
@@ -42,13 +42,12 @@ ExitCode main(List<String> arguments) {
         if (confirm.trim().toLowerCase() == 'y') {
           Scaffolding(dest).generate();
           break;
-        } else if(confirm.trim().toLowerCase() == 'n') {
+        } else if (confirm.trim().toLowerCase() == 'n') {
           print('');
           print('---Generated nothing---');
           return ExitCode.WARNING;
         }
-      } while(true);
-
+      } while (true);
     } else {
       String type = results['type'];
       String module = results['module'];
@@ -59,7 +58,7 @@ ExitCode main(List<String> arguments) {
         showHelp();
         return ExitCode.WARNING;
       }
-      
+
       print('This will generate ${article} ${type} in your butter project in:');
       print(dest);
       print('');
@@ -73,22 +72,22 @@ ExitCode main(List<String> arguments) {
           print('---Generated nothing---');
           return ExitCode.WARNING;
         }
-      } while(true);
+      } while (true);
 
-      switch(type) {
-      case 'module':
-        Module(module, dest).generate();
-        break;
-      case 'page':
-        Page(module, dest).generate(name);
-        break; 
-      case 'action':
-        Action(module, dest).generate(name);
-        break;
-      default:
-        print('');
-        print('---Generated nothing---');
-        return ExitCode.ERROR;
+      switch (type) {
+        case 'module':
+          Module(module, dest).generate();
+          break;
+        case 'page':
+          Page(module, dest).generate(name);
+          break;
+        case 'action':
+          Action(module, dest).generate(name);
+          break;
+        default:
+          print('');
+          print('---Generated nothing---');
+          return ExitCode.ERROR;
       }
     }
 
@@ -98,41 +97,65 @@ ExitCode main(List<String> arguments) {
     print('');
 
     return ExitCode.SUCCESS;
-  } catch(e) {
+  } catch (e) {
     print('');
     print('Something went wrong... (╥_╥)');
     print('');
     print(e);
-    return ExitCode.ERROR; 
+    return ExitCode.ERROR;
   }
 }
 
 void showLogo() {
   print('');
-  print('.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++`');
-  print('.sss+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++sss. ');
-  print('.ss+                                                                                     +ss. ');
-  print('.ss+   `ossssssso+-`   `+ssso` `+sssssssssssssssssssssss/:sssssssssss:  -ossssssso/-     +ss. ');
-  print('.ss+   `oyyyssssyys+.  `+yyys. `+syyyssssyyyyssssyyyysss//syyssssyyyy:  -syyyssssyss/`   +ss. ');
-  print('.ss+   `oyyys-.:syys+` `+yyys. `+syys:..+syys:..+syys/..:syys/../syyy:  -syyy+../syys:   +ss. ');
-  print('.ss+   `oyyyo. `oyyyo` `+yyys. `+syys.  /syys-  /syys-  :syys:  -syyy:  -syys+  .syys+   +ss. ');
-  print('.ss+   `oyyyo. `oyyyo` `+yyys. `+syys.  /syys-  /syys-  :syys:  -syyy:  -syys+  .syys+   +ss. ');
-  print('.ss+   `oyyyo. `oyyyo` `+yyys. `+syys.  /syys-  /syys-  :syys:  -ssss:  -syys+  .syys+   +ss. ');
-  print('.ss+   `oyyyo. `oyyyo` `+yyys. `+syys.  /syys-  /syys-  :syys:   `````  -syys+  -syys+   +ss. ');
-  print('.ss+   `oyyys:-:syys+` `+yyys. `+syys.  /syys-  /syys-  :syyy/-......`  -syyyo--+syys:   +ss. ');
-  print('.ss+   `oyyyyyyyyyyo.  `+yyys. `+syys.  /syys-  /syys-  :syyyyyyyyyys:  -syyyyyyyyys+`   +ss. ');
-  print('.ss+   `oyyyssssyyys:  `+yyys. `+syys.  /syys-  /syys-  :syyyssssssss:  -syyyssssyyso.   +ss. ');
-  print('.ss+   `oyyyo.`.syyyo` `+yyys. `+syys.  /syys-  /syys-  :syyy/```````   -syyy/``:syys/   +ss. ');
-  print('.ss+   `oyyyo. `oyyyo` `+yyys. `+syys.  /syys-  /syys-  :syyy/  `----.  -syys/  .syys+   +ss. ');
-  print('.ss+   `oyyyo. `oyyyo` `+yyys. `+syys.  /syys-  /syys-  :syyy/  -ssss:  -syys/  .syys+   +ss. ');
-  print('.ss+   `oyyyo. `oyyyo` `+yyys. `+syys.  /syys-  /syys-  :syyy:  -syyy:  -syys/  .syys+   +ss. ');
-  print('.ss+   `oyyyo. `oyyyo` `+yyys. `+syys.  /syys-  /syys-  :syyy:  -syyy:  -syys/  .syys+   +ss. ');
-  print('.ss+   `oyyys/:+syys/   /syys/-:syyyo`  /syys-  /syys-  :syyy+::+syyy:  -syys/  .syys+   +ss. ');
-  print('.ss+   `oyyyyyyyyss/`   `/ssyyssyyso.   /syys-  /syys-  :syyyyyyyyyyy:  -syys/  .syys+   +ss. ');
-  print('.ss+   `+oooooo+/:.       ./oosso+:`    :+oo+.  :+oo+.  -oooooooooooo-  .+ooo:  .+ooo:   +ss. ');
-  print('.ss+                                                                                     +ss. ');
-  print('.sys+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++sys. ');
-  print('.+ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo+`');
+  print(
+      '.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++`');
+  print(
+      '.sss+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++sss. ');
+  print(
+      '.ss+                                                                                     +ss. ');
+  print(
+      '.ss+   `ossssssso+-`   `+ssso` `+sssssssssssssssssssssss/:sssssssssss:  -ossssssso/-     +ss. ');
+  print(
+      '.ss+   `oyyyssssyys+.  `+yyys. `+syyyssssyyyyssssyyyysss//syyssssyyyy:  -syyyssssyss/`   +ss. ');
+  print(
+      '.ss+   `oyyys-.:syys+` `+yyys. `+syys:..+syys:..+syys/..:syys/../syyy:  -syyy+../syys:   +ss. ');
+  print(
+      '.ss+   `oyyyo. `oyyyo` `+yyys. `+syys.  /syys-  /syys-  :syys:  -syyy:  -syys+  .syys+   +ss. ');
+  print(
+      '.ss+   `oyyyo. `oyyyo` `+yyys. `+syys.  /syys-  /syys-  :syys:  -syyy:  -syys+  .syys+   +ss. ');
+  print(
+      '.ss+   `oyyyo. `oyyyo` `+yyys. `+syys.  /syys-  /syys-  :syys:  -ssss:  -syys+  .syys+   +ss. ');
+  print(
+      '.ss+   `oyyyo. `oyyyo` `+yyys. `+syys.  /syys-  /syys-  :syys:   `````  -syys+  -syys+   +ss. ');
+  print(
+      '.ss+   `oyyys:-:syys+` `+yyys. `+syys.  /syys-  /syys-  :syyy/-......`  -syyyo--+syys:   +ss. ');
+  print(
+      '.ss+   `oyyyyyyyyyyo.  `+yyys. `+syys.  /syys-  /syys-  :syyyyyyyyyys:  -syyyyyyyyys+`   +ss. ');
+  print(
+      '.ss+   `oyyyssssyyys:  `+yyys. `+syys.  /syys-  /syys-  :syyyssssssss:  -syyyssssyyso.   +ss. ');
+  print(
+      '.ss+   `oyyyo.`.syyyo` `+yyys. `+syys.  /syys-  /syys-  :syyy/```````   -syyy/``:syys/   +ss. ');
+  print(
+      '.ss+   `oyyyo. `oyyyo` `+yyys. `+syys.  /syys-  /syys-  :syyy/  `----.  -syys/  .syys+   +ss. ');
+  print(
+      '.ss+   `oyyyo. `oyyyo` `+yyys. `+syys.  /syys-  /syys-  :syyy/  -ssss:  -syys/  .syys+   +ss. ');
+  print(
+      '.ss+   `oyyyo. `oyyyo` `+yyys. `+syys.  /syys-  /syys-  :syyy:  -syyy:  -syys/  .syys+   +ss. ');
+  print(
+      '.ss+   `oyyyo. `oyyyo` `+yyys. `+syys.  /syys-  /syys-  :syyy:  -syyy:  -syys/  .syys+   +ss. ');
+  print(
+      '.ss+   `oyyys/:+syys/   /syys/-:syyyo`  /syys-  /syys-  :syyy+::+syyy:  -syys/  .syys+   +ss. ');
+  print(
+      '.ss+   `oyyyyyyyyss/`   `/ssyyssyyso.   /syys-  /syys-  :syyyyyyyyyyy:  -syys/  .syys+   +ss. ');
+  print(
+      '.ss+   `+oooooo+/:.       ./oosso+:`    :+oo+.  :+oo+.  -oooooooooooo-  .+ooo:  .+ooo:   +ss. ');
+  print(
+      '.ss+                                                                                     +ss. ');
+  print(
+      '.sys+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++sys. ');
+  print(
+      '.+ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo+`');
   print('');
 }
 
@@ -147,13 +170,15 @@ void showHelp() {
   print('--module or -m');
   print('  The name of the module. Use a lowercase_with_underscores.');
   print('--name or -n');
-  print('  The name of the object under a module. Specify this when generating');
+  print(
+      '  The name of the object under a module. Specify this when generating');
   print('  a page or an action. Use a lowercase_with_underscores.');
   print('--skeleton or -s');
   print('  Generates the skeletal files of the framework under lib and test');
   print('--type=<item> or -t');
   print('  Where item is any of: module, page, action.');
-  print('  When generating a page. A state and model is provided along with it.');
+  print(
+      '  When generating a page. A state and model is provided along with it.');
   print('');
   print('To generate a project skeleton: ');
   print(' butter_cli -s -d /path/to/project');
@@ -162,6 +187,6 @@ void showHelp() {
   print(' butter_cli -t module -m home -d /path/to/project');
   print('');
   print('To generate a page: ');
-  print(' butter_cli -t page -m profile -n edit_profile -d /path/to/project'); 
+  print(' butter_cli -t page -m profile -n edit_profile -d /path/to/project');
   print('');
 }
