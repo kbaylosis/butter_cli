@@ -2,6 +2,14 @@
 
 Generates the butter framework scaffolding.
 
+## Getting Started
+
+Install the butter_cli using the following command:
+
+```
+pub global activate butter_cli
+```
+
 ## Usage
 
 ```
