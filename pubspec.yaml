@@ -13,6 +13,8 @@ dependencies:
   path: ^1.6.0
   args: ^1.6.0
   io: ^0.3.4
+  mustache: ^1.1.1
+  recase: ^3.0.0
 
 dev_dependencies:
   pedantic: ^1.8.0

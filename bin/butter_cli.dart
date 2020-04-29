@@ -1,6 +1,8 @@
 // import 'package:args/args.dart';
 
 import 'package:butter_cli/butter_cli.dart';
+import 'package:butter_cli/src/action.dart';
+import 'package:butter_cli/src/page.dart';
 
 //
 // 1. Create butter scafolding
@@ -13,9 +15,14 @@ import 'package:butter_cli/butter_cli.dart';
 void main(List<String> arguments) {
   // final ArgParser argParser = ArgParser();
 
-  print(Paths.getCurrentDir());
-  print(Paths.getScriptDir());
+  // print(Paths.getCurrentDir());
+  // print(Paths.getScriptDir());
+  
+  Scaffolding('/Users/kennethbaylosis/data/temp/sample').generate();
 
-  // Scaffolding.generate(Paths.getCurrentDir());
-  Scaffolding.generate('/Users/kennethbaylosis/data/temp/sample/lib');
+  Module('init', '/Users/kennethbaylosis/data/temp/sample').generate();
+  Module('home', '/Users/kennethbaylosis/data/temp/sample').generate();
+  Module('newsfeed', '/Users/kennethbaylosis/data/temp/sample').generate();
+  Action('home', '/Users/kennethbaylosis/data/temp/sample').generate('eat_the_food');
+  Page('init', '/Users/kennethbaylosis/data/temp/sample').generate('forgot_pw'); 
 }

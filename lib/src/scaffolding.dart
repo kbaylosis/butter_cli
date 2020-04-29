@@ -1,13 +1,21 @@
 
+import 'dart:io';
+
 import 'package:io/io.dart';
 
 import 'paths.dart';
 
 class Scaffolding {
-  static void generate(String dest) {
+  final String destination;
+
+  Scaffolding(this.destination);
+
+  void generate() {
     var src = Paths.getScriptDir();
 
-    copyPath('${src}/../${Paths.libScaffoldingPath}', dest);
-    copyPath('${src}/../${Paths.libScaffoldingPath}', dest);
+    stdout.write('Generating project skeleton... ');
+    copyPath('${src}/../${Paths.libScaffoldingPath}', '${destination}/${Paths.libPath}');
+    copyPath('${src}/../${Paths.testScaffoldingPath}', '${destination}/${Paths.testPath}');
+    print('✓ Done');
   }
 }

@@ -29,9 +29,9 @@ class {{ Noname }}State extends BasePageState<{{ Noname }}Model> {
   @override
   {{ Noname }}State fromStore() => {{ Noname }}State.build(read<{{ Noname }}Model>(
     {{ Noname }}Model(
-
+      // Initialize your models here in case it is not available in the store yet
     ),
   ), (m) {
-
+    // Load all your model's handlers here
   });
 }
