@@ -1,5 +1,5 @@
 name: butter_cli
-description: The cli companion of the butter framework 
+description: Generates the butter framework scaffolding.
 version: 0.0.1
 # homepage: https://www.example.com
 
