@@ -1,3 +1,3 @@
-int calculate() {
-  return 6 * 7;
-}
+
+export 'src/paths.dart';
+export 'src/scaffolding.dart';
