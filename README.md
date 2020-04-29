@@ -1,5 +1,34 @@
-A sample command-line application with an entrypoint in `bin/`, library code
-in `lib/`, and example unit test in `test/`.
+# butter_cli
 
-Created from templates made available by Stagehand under a BSD-style
-[license](https://github.com/dart-lang/stagehand/blob/master/LICENSE).
+Generates the butter framework scaffolding.
+
+## Usage
+
+```
+Usage: butter_cli [<options>] --destination <destination>
+
+Generates the butter framework scaffolding.
+
+Options:
+--help or -h
+  Show this information
+  When generating a page. A state and model is provided along with it.
+--module or -m
+  The name of the module. Use a lowercase_with_underscores.
+--name or -n
+  The name of the object under a module. Specify this when generating
+  a page or an action. Use a lowercase_with_underscores.
+--skeleton or -s
+  Generates the skeletal files of the framework under lib and test
+--type=<item> or -t
+  Where item is any of: module, page, action.
+
+To generate a project skeleton: 
+ butter_cli -s -d /path/to/project
+
+To generate a module: 
+ butter_cli -t module -m home -d /path/to/project
+
+To generate a page: 
+ butter_cli -t page -m profile -n edit_profile -d /path/to/project
+```
