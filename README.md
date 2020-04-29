@@ -20,7 +20,6 @@ Generates the butter framework scaffolding.
 Options:
 --help or -h
   Show this information
-  When generating a page. A state and model is provided along with it.
 --module or -m
   The name of the module. Use a lowercase_with_underscores.
 --name or -n
@@ -30,6 +29,7 @@ Options:
   Generates the skeletal files of the framework under lib and test
 --type=<item> or -t
   Where item is any of: module, page, action.
+  When generating a page. A state and model is provided along with it.
 
 To generate a project skeleton: 
  butter_cli -s -d /path/to/project
