@@ -144,7 +144,6 @@ void showHelp() {
   print('Options:');
   print('--help or -h');
   print('  Show this information');
-  print('  When generating a page. A state and model is provided along with it.');
   print('--module or -m');
   print('  The name of the module. Use a lowercase_with_underscores.');
   print('--name or -n');
@@ -154,6 +153,7 @@ void showHelp() {
   print('  Generates the skeletal files of the framework under lib and test');
   print('--type=<item> or -t');
   print('  Where item is any of: module, page, action.');
+  print('  When generating a page. A state and model is provided along with it.');
   print('');
   print('To generate a project skeleton: ');
   print(' butter_cli -s -d /path/to/project');
