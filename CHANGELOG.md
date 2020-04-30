@@ -1,3 +1,7 @@
+## 0.0.4
+
+* Update butter logo
+
 ## 0.0.3
 
 * Fix various health issues and suggestions reported by pub.dev
