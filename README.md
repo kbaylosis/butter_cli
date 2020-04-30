@@ -1,6 +1,7 @@
 # butter_cli
 
-![Pub Version](https://img.shields.io/pub/v/butter_cli) [![Build Status](https://travis-ci.org/kbaylosis/butter_cli.svg?branch=master)](https://travis-ci.org/kbaylosis/butter_cli)
+[![pub package](https://img.shields.io/pub/v/butter_cli)](https://pub.dartlang.org/packages/freezed)
+[![Build Status](https://travis-ci.org/kbaylosis/butter_cli.svg?branch=master)](https://travis-ci.org/kbaylosis/butter_cli)
 
 Generates the butter framework scaffolding.
 
