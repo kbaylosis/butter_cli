@@ -1,3 +1,7 @@
+## 0.0.5
+
+* Rename app.dart to app_config.dart in assets/lib/config
+
 ## 0.0.4
 
 * Update butter logo

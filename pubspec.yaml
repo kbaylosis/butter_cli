@@ -1,6 +1,6 @@
 name: butter_cli
 description: The cli companion of the butter framework. This tool is used to generate the project scaffolding.
-version: 0.0.4
+version: 0.0.5
 homepage: https://zoogtech.com
 
 environment:
