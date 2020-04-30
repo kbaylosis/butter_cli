@@ -1,4 +1,3 @@
-
 import 'package:args/args.dart';
 import 'package:butter_cli/butter_cli.dart';
 
