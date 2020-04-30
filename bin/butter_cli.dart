@@ -108,54 +108,13 @@ ExitCode main(List<String> arguments) {
 
 void showLogo() {
   print('');
-  print(
-      '.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++`');
-  print(
-      '.sss+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++sss. ');
-  print(
-      '.ss+                                                                                     +ss. ');
-  print(
-      '.ss+   `ossssssso+-`   `+ssso` `+sssssssssssssssssssssss/:sssssssssss:  -ossssssso/-     +ss. ');
-  print(
-      '.ss+   `oyyyssssyys+.  `+yyys. `+syyyssssyyyyssssyyyysss//syyssssyyyy:  -syyyssssyss/`   +ss. ');
-  print(
-      '.ss+   `oyyys-.:syys+` `+yyys. `+syys:..+syys:..+syys/..:syys/../syyy:  -syyy+../syys:   +ss. ');
-  print(
-      '.ss+   `oyyyo. `oyyyo` `+yyys. `+syys.  /syys-  /syys-  :syys:  -syyy:  -syys+  .syys+   +ss. ');
-  print(
-      '.ss+   `oyyyo. `oyyyo` `+yyys. `+syys.  /syys-  /syys-  :syys:  -syyy:  -syys+  .syys+   +ss. ');
-  print(
-      '.ss+   `oyyyo. `oyyyo` `+yyys. `+syys.  /syys-  /syys-  :syys:  -ssss:  -syys+  .syys+   +ss. ');
-  print(
-      '.ss+   `oyyyo. `oyyyo` `+yyys. `+syys.  /syys-  /syys-  :syys:   `````  -syys+  -syys+   +ss. ');
-  print(
-      '.ss+   `oyyys:-:syys+` `+yyys. `+syys.  /syys-  /syys-  :syyy/-......`  -syyyo--+syys:   +ss. ');
-  print(
-      '.ss+   `oyyyyyyyyyyo.  `+yyys. `+syys.  /syys-  /syys-  :syyyyyyyyyys:  -syyyyyyyyys+`   +ss. ');
-  print(
-      '.ss+   `oyyyssssyyys:  `+yyys. `+syys.  /syys-  /syys-  :syyyssssssss:  -syyyssssyyso.   +ss. ');
-  print(
-      '.ss+   `oyyyo.`.syyyo` `+yyys. `+syys.  /syys-  /syys-  :syyy/```````   -syyy/``:syys/   +ss. ');
-  print(
-      '.ss+   `oyyyo. `oyyyo` `+yyys. `+syys.  /syys-  /syys-  :syyy/  `----.  -syys/  .syys+   +ss. ');
-  print(
-      '.ss+   `oyyyo. `oyyyo` `+yyys. `+syys.  /syys-  /syys-  :syyy/  -ssss:  -syys/  .syys+   +ss. ');
-  print(
-      '.ss+   `oyyyo. `oyyyo` `+yyys. `+syys.  /syys-  /syys-  :syyy:  -syyy:  -syys/  .syys+   +ss. ');
-  print(
-      '.ss+   `oyyyo. `oyyyo` `+yyys. `+syys.  /syys-  /syys-  :syyy:  -syyy:  -syys/  .syys+   +ss. ');
-  print(
-      '.ss+   `oyyys/:+syys/   /syys/-:syyyo`  /syys-  /syys-  :syyy+::+syyy:  -syys/  .syys+   +ss. ');
-  print(
-      '.ss+   `oyyyyyyyyss/`   `/ssyyssyyso.   /syys-  /syys-  :syyyyyyyyyyy:  -syys/  .syys+   +ss. ');
-  print(
-      '.ss+   `+oooooo+/:.       ./oosso+:`    :+oo+.  :+oo+.  -oooooooooooo-  .+ooo:  .+ooo:   +ss. ');
-  print(
-      '.ss+                                                                                     +ss. ');
-  print(
-      '.sys+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++sys. ');
-  print(
-      '.+ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo+`');
+  print('./:::::::.   .+::: ./::: `/::::::::/  -+::::::::- ./::::::::/  -+:::::::-`');   
+  print('+y-./+/:./.  ss..+ ss..+ +s+++-.:+// .ys++:.-++/. oy-./++++// `so.-++++--+');   
+  print('+y-.+++/.::  ss..+ so..+ `..+s:.o-.   ..:so.:/.`  oy-.++++++` .so.-+/os-.+');   
+  print('+s-.:///:-+` ss..+ yo..+    +s:.o       .so.::    oy-.:::::+` .so..::---/-');   
+  print('+y-.++oo/./. ss-.+-o+.-/    +s:.o       .s+.::    oy-.+oooo:- .so.-ooo--+ ');   
+  print('+s:::::::::  +s+/::::::`    +s/:o       .so:/-    oy::::::::+ .so:/:+s+://');   
+  print(':///////-`   `-/////:`      -//:`       `///.     :////////:` `///- `///:`');
   print('');
 }
 
