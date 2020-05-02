@@ -1,7 +1,6 @@
 # butter_cli
 
-[![pub package](https://img.shields.io/pub/v/butter_cli)](https://pub.dartlang.org/packages/butter_cli)
-[![Build Status](https://travis-ci.org/kbaylosis/butter_cli.svg?branch=master)](https://travis-ci.org/kbaylosis/butter_cli)
+[![pub package](https://img.shields.io/pub/v/butter_cli)](https://pub.dartlang.org/packages/butter_cli) [![Build Status](https://travis-ci.org/kbaylosis/butter_cli.svg?branch=master)](https://travis-ci.org/kbaylosis/butter_cli)
 
 Generates the [butter](https://pub.dev/packages/butter) framework scaffolding for [flutter](https://flutter.dev/) development.
 
@@ -30,8 +29,8 @@ Options:
   a page or an action. Use a lowercase_with_underscores.
 --skeleton or -s
   Generates the skeletal files of the framework under lib and test
---type=<item> or -t
-  Where item is any of: module, page, action.
+--type <item> or -t <item>
+  Where <item> is any of: module, page, action.
   When generating a page. A state and model is provided along with it.
 
 To generate a project skeleton: 
