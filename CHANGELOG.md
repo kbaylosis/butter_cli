@@ -1,3 +1,7 @@
+## 0.0.6
+
+* Transfer the templates to the bin directory
+
 ## 0.0.5
 
 * Rename app.dart to app_config.dart in assets/lib/config
