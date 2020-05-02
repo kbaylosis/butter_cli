@@ -141,8 +141,8 @@ void showHelp() {
   print('  a page or an action. Use a lowercase_with_underscores.');
   print('--skeleton or -s');
   print('  Generates the skeletal files of the framework under lib and test');
-  print('--type=<item> or -t');
-  print('  Where item is any of: module, page, action.');
+  print('--type <item> or -t <item>');
+  print('  Where <item> is any of: module, page, action.');
   print(
       '  When generating a page. A state and model is provided along with it.');
   print('');
