@@ -11,6 +11,6 @@ class Generator {
 
   Generator(this.name, this.destination)
       : srcModulePath =
-            '${Paths.getScriptDir()}/../${Paths.moduleScaffoldingPath}',
+            '${Paths.getScriptDir()}/${Paths.moduleScaffoldingPath}',
         destModulePath = '${destination}/${Paths.modulePath}/${name}';
 }

@@ -14,13 +14,12 @@ class Page extends Generator {
     final filename = ReCase(pageName).constantCase.toLowerCase();
     t.items['noname'] = filename;
 
-    stdout.write('Generating page set for ${t.items['Noname']}Page... ');
-    TemplateEngine().convert('${srcModulePath}/pages/noname_page.dart',
+    print('[${t.items['Noname']}Page]');
+    TemplateEngine().convert('${srcModulePath}/pages/noname_page.template',
         '${destModulePath}/pages/${filename}_page.dart', t);
-    TemplateEngine().convert('${srcModulePath}/states/noname_state.dart',
+    TemplateEngine().convert('${srcModulePath}/states/noname_state.template',
         '${destModulePath}/states/${filename}_state.dart', t);
-    TemplateEngine().convert('${srcModulePath}/models/noname_model.dart',
+    TemplateEngine().convert('${srcModulePath}/models/noname_model.template',
         '${destModulePath}/models/${filename}_model.dart', t);
-    print('✓ Done');
   }
 }

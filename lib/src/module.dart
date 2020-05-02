@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:butter_cli/src/generator.dart';
+import 'package:recase/recase.dart';
 
 import 'action.dart';
 import 'page.dart';
@@ -10,10 +11,9 @@ class Module extends Generator {
   Module(String name, String destination) : super(name, destination);
 
   void generate() {
-    stdout.write('Generating main module file... ');
-    TemplateEngine().convert('${srcModulePath}/noname.dart',
+    print('[Main ${ReCase(name).titleCase} file]');
+    TemplateEngine().convert('${srcModulePath}/noname.template',
         '${destModulePath}/${name}.dart', templates);
-    print('✓ Done');
 
     Action(name, destination).generate('sample');
     Page(name, destination).generate(name);

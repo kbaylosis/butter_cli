@@ -13,9 +13,8 @@ class Action extends Generator {
     t.items['Sample'] = ReCase(actionName).pascalCase;
     final filename = ReCase(actionName).constantCase.toLowerCase();
 
-    stdout.write('Generating ${t.items['Sample']}Action... ');
-    TemplateEngine().convert('${srcModulePath}/actions/sample_action.dart',
+    print('[${t.items['Sample']}Action]');
+    TemplateEngine().convert('${srcModulePath}/actions/sample_action.template',
         '${destModulePath}/actions/${filename}_action.dart', t);
-    print('✓ Done');
   }
 }

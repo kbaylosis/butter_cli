@@ -3,9 +3,9 @@ import 'dart:io';
 import 'package:path/path.dart';
 
 class Paths {
-  static const String libScaffoldingPath = 'assets/lib';
-  static const String testScaffoldingPath = 'assets/test';
-  static const String moduleScaffoldingPath = 'assets/noname';
+  static const String libScaffoldingPath = 'templates/lib';
+  static const String testScaffoldingPath = 'templates/test';
+  static const String moduleScaffoldingPath = 'templates/noname';
 
   static const String libPath = 'lib';
   static const String modulePath = 'lib/modules';
