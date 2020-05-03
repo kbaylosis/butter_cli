@@ -1,3 +1,5 @@
+import 'package:pub_cache/pub_cache.dart';
+
 class Config {
-  static const String version = '0.1.3';
+  static String get version => PubCache().getLatestVersion('butter_cli').version.toString();
 }
