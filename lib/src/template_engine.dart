@@ -14,7 +14,8 @@ class TemplateEngine {
     var sourceData = srcFile.readAsStringSync();
     var template = Template(sourceData);
 
-    var output = templates == null ? sourceData : template.renderString(templates.items);
+    var output =
+        templates == null ? sourceData : template.renderString(templates.items);
 
     print(dest);
     var destFile = File(dest);

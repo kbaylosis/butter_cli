@@ -19,8 +19,9 @@ class Paths {
   }
 
   static String getScriptDir() =>
-    dirname(Platform.script.toString()).replaceFirst('file://', '');
+      dirname(Platform.script.toString()).replaceFirst('file://', '');
 
-  static String getPubCacheDir() => 
-    '${PubCache().location.uri.path}/hosted/pub.dartlang.org/butter_cli-${Config.version}'.replaceAll("'", '');
+  static String getPubCacheDir() =>
+      '${PubCache().location.uri.path}/hosted/pub.dartlang.org/butter_cli-${Config.version}'
+          .replaceAll("'", '');
 }
