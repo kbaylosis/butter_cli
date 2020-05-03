@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:io/io.dart';
 
 import 'paths.dart';

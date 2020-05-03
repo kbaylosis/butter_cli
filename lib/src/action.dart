@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:recase/recase.dart';
 
 import 'generator.dart';

@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:butter_cli/src/generator.dart';
 import 'package:recase/recase.dart';
 
