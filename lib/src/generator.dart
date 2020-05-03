@@ -10,7 +10,6 @@ class Generator {
   Templates get templates => Templates(name);
 
   Generator(this.name, this.destination)
-      : srcModulePath =
-            '${Paths.moduleScaffoldingPath}',
+      : srcModulePath = '${Paths.moduleScaffoldingPath}',
         destModulePath = '${destination}/${Paths.modulePath}/${name}';
 }
