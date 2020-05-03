@@ -1,3 +1,8 @@
+## 0.1.0
+
+* Increment minor version
+* Add repository to pubspec
+  
 ## 0.0.7
 
 * Transfer the templates to the lib directory
