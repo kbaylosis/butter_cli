@@ -1,3 +1,7 @@
+## 0.1.4
+
+* Automatically retrieve the latest package version in pub-cache
+
 ## 0.1.3
 
 * Fix pub-cache path issue in action, module, and page generators
