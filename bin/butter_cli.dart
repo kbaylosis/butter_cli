@@ -31,7 +31,6 @@ ExitCode main(List<String> arguments) {
     }
 
     if (results['skeleton']) {
-      print('HERE: ${Paths.getPubCacheDir()}');
       print('This will generate skelatal files of the butter framework in:');
       print(dest);
       print('');
