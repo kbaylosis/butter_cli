@@ -1,3 +1,8 @@
+## 0.0.7
+
+* Transfer the templates to the lib directory
+* Access template files in pub-cache
+  
 ## 0.0.6
 
 * Transfer the templates to the bin directory
