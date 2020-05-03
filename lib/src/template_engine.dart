@@ -6,7 +6,12 @@ import 'templates.dart';
 
 class TemplateEngine {
   void convert(String src, String dest, Templates templates) {
-    var sourceData = File(src).readAsStringSync();
+    var srcFile = File(src);
+    if (!srcFile.existsSync()) {
+      throw FileSystemException('File does not exist ${src}');
+    }
+
+    var sourceData = srcFile.readAsStringSync();
     var template = Template(sourceData);
 
     var output = templates == null ? sourceData : template.renderString(templates.items);

@@ -4,8 +4,6 @@ import 'package:args/args.dart';
 
 import 'package:butter_cli/butter_cli.dart';
 
-const version = '0.0.1';
-
 enum ExitCode {
   SUCCESS,
   WARNING,
@@ -25,7 +23,7 @@ ExitCode main(List<String> arguments) {
     var results = parser.parse(arguments);
     String dest = results['destination'] ?? '.';
 
-    print('Butter CLI v${version}');
+    print('Butter CLI v${Config.version}');
 
     if (results['help']) {
       showHelp();
@@ -33,6 +31,7 @@ ExitCode main(List<String> arguments) {
     }
 
     if (results['skeleton']) {
+      print('HERE: ${Paths.getPubCacheDir()}');
       print('This will generate skelatal files of the butter framework in:');
       print(dest);
       print('');

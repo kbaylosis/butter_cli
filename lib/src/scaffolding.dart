@@ -11,7 +11,7 @@ class Scaffolding {
   Scaffolding(this.destination);
 
   void generate() {
-    var src = Paths.getScriptDir();
+    var src = Paths.getPubCacheDir();
     var engine = TemplateEngine();
 
     print('Generating project skeleton... ');
