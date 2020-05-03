@@ -1,3 +1,7 @@
+## 0.1.1
+
+* Fix version setting
+  
 ## 0.1.0
 
 * Increment minor version
