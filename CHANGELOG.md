@@ -1,3 +1,7 @@
+## 0.1.3
+
+* Fix pub-cache path issue in action, module, and page generators
+  
 ## 0.1.2
 
 * Fix pub-cache path
