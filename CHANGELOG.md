@@ -1,3 +1,7 @@
+## 0.1.2
+
+* Fix pub-cache path
+  
 ## 0.1.1
 
 * Fix version setting
