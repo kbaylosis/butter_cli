@@ -21,4 +21,17 @@ class App extends StatelessWidget {
       initialRoute: routes.defaultModule.routeName,
     );
   }
+
+  /// Shorthand for retrieving the current child route
+  static BasePageConnector<BasePageState<BaseUIModel>, BasePageView> 
+    getChild(BuildContext context, BaseUIModel model, [String routeName]) =>
+    App.routes.routes[model.$key].getChild(context, routeName);
+
+  /// Shorthand for retrieving the current route
+  static String getRouteName(BuildContext context) =>
+    BaseNavigator.getRouteName(context);
+
+  /// Shorthand for extracting page arguments
+  static T getPageArgs<T>(BuildContext context) =>
+    (ModalRoute.of(context).settings.arguments as PageArguments).arg;
 }
