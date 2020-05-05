@@ -16,7 +16,7 @@ class Module extends Generator {
     TemplateEngine().convert('${src}/${srcModulePath}/noname.template',
         '${destModulePath}/${name}.dart', templates);
 
-    Action(name, destination).generate('sample');
+    Action(name, destination).generate('sample', name);
     Page(name, destination).generate(name);
   }
 }

@@ -15,6 +15,7 @@ ExitCode main(List<String> arguments) {
     final parser = ArgParser();
     parser.addOption('destination', abbr: 'd');
     parser.addFlag('help', abbr: 'h');
+    parser.addOption('model', abbr: 'o');
     parser.addOption('module', abbr: 'm');
     parser.addOption('name', abbr: 'n');
     parser.addFlag('skeleton', abbr: 's');
@@ -50,6 +51,7 @@ ExitCode main(List<String> arguments) {
       String type = results['type'];
       String module = results['module'];
       String name = results['name'];
+      String model = results['model'];
       var article = type == 'action' ? 'an' : 'a';
 
       if (type == null) {
@@ -80,7 +82,7 @@ ExitCode main(List<String> arguments) {
           Page(module, dest).generate(name);
           break;
         case 'action':
-          Action(module, dest).generate(name);
+          Action(module, dest).generate(name, model);
           break;
         default:
           print('');
@@ -131,6 +133,8 @@ void showHelp() {
   print('Options:');
   print('--help or -h');
   print('  Show this information');
+  print('--model or -o');
+  print('  The name of the default model to use usually in generating an action. Use a lowercase_with_underscores.');
   print('--module or -m');
   print('  The name of the module. Use a lowercase_with_underscores.');
   print('--name or -n');
@@ -152,5 +156,8 @@ void showHelp() {
   print('');
   print('To generate a page: ');
   print(' butter_cli -t page -m profile -n edit_profile -d /path/to/project');
+  print(''); 
+  print('To generate an action: ');
+  print(' butter_cli -t action -m profile -o user_profile -n edit_profile -d /path/to/project');
   print('');
 }

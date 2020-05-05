@@ -22,6 +22,8 @@ Generates the butter framework scaffolding.
 Options:
 --help or -h
   Show this information
+--model or -o
+  The name of the default model to use usually in generating an action. Use a lowercase_with_underscores.
 --module or -m
   The name of the module. Use a lowercase_with_underscores.
 --name or -n
@@ -41,4 +43,7 @@ To generate a module:
 
 To generate a page: 
  butter_cli -t page -m profile -n edit_profile -d /path/to/project
+
+To generate an action: 
+ butter_cli -t action -m profile -o user_profile -n edit_profile -d /path/to/project
 ```

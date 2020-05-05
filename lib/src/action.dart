@@ -7,11 +7,13 @@ import 'template_engine.dart';
 class Action extends Generator {
   Action(String name, String destination) : super(name, destination);
 
-  void generate(String actionName) {
+  void generate(String actionName, String modelName) {
     var src = Paths.getPubCacheDir();
     var t = templates;
     t.items['Sample'] = ReCase(actionName).pascalCase;
     final filename = ReCase(actionName).constantCase.toLowerCase();
+    t.items['Noname'] = ReCase(modelName).pascalCase;
+    t.items['noname'] = ReCase(modelName).constantCase.toLowerCase();;
 
     print('[${t.items['Sample']}Action]');
     TemplateEngine().convert(
