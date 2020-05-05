@@ -13,7 +13,8 @@ class Action extends Generator {
     t.items['Sample'] = ReCase(actionName).pascalCase;
     final filename = ReCase(actionName).constantCase.toLowerCase();
     t.items['Noname'] = ReCase(modelName).pascalCase;
-    t.items['noname'] = ReCase(modelName).constantCase.toLowerCase();;
+    t.items['noname'] = ReCase(modelName).constantCase.toLowerCase();
+    ;
 
     print('[${t.items['Sample']}Action]');
     TemplateEngine().convert(

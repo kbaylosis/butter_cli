@@ -134,7 +134,8 @@ void showHelp() {
   print('--help or -h');
   print('  Show this information');
   print('--model or -o');
-  print('  The name of the default model to use usually in generating an action. Use a lowercase_with_underscores.');
+  print(
+      '  The name of the default model to use usually in generating an action. Use a lowercase_with_underscores.');
   print('--module or -m');
   print('  The name of the module. Use a lowercase_with_underscores.');
   print('--name or -n');
@@ -156,8 +157,9 @@ void showHelp() {
   print('');
   print('To generate a page: ');
   print(' butter_cli -t page -m profile -n edit_profile -d /path/to/project');
-  print(''); 
+  print('');
   print('To generate an action: ');
-  print(' butter_cli -t action -m profile -o user_profile -n edit_profile -d /path/to/project');
+  print(
+      ' butter_cli -t action -m profile -o user_profile -n edit_profile -d /path/to/project');
   print('');
 }
