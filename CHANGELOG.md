@@ -1,3 +1,8 @@
+## 0.2.0
+
+* Added shorthand methods in app.template
+* Specify the default model when generating an action
+
 ## 0.1.4
 
 * Automatically retrieve the latest package version in pub-cache
