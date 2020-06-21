@@ -1,3 +1,8 @@
+## 0.3.0
+
+* Fixed errors in creating a skeletong project
+* Add butter in pubspec of skeleton project
+  
 ## 0.2.0
 
 * Added shorthand methods in app.template
