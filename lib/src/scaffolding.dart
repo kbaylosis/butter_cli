@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:butter_cli/src/config.dart';
 import 'package:io/io.dart';
 
 import 'paths.dart';
@@ -52,8 +55,27 @@ class Scaffolding {
 
     // test
     print('${destination}/${Paths.testPath}');
-    copyPath('${src}/${Paths.testScaffoldingPath}',
-        '${destination}/${Paths.testPath}');
+    engine.copy(
+        '${src}/${Paths.testScaffoldingPath}/widget_test.template',
+        '${destination}/${Paths.testPath}/widget_test.dart');
+
+    // pubspec.yaml
+    print('${destination}/pubspec.yaml');
+    updatePubspec(destination);
+
     print('✓ Done');
+  }
+
+  void updatePubspec(String destination) {
+    var srcFile = File('$destination/pubspec.yaml');
+    var sourceData = srcFile.readAsStringSync();
+
+    if (sourceData.contains('butter:')) {
+      return;
+    }
+    
+    sourceData = sourceData.replaceFirst('sdk: flutter', 'sdk: flutter\n  butter:');
+
+    srcFile.writeAsStringSync(sourceData);
   }
 }
