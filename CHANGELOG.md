@@ -1,6 +1,6 @@
 ## 0.3.0
 
-* Fixed errors in creating a skeletong project
+* Fixed errors in creating a skeleton project
 * Add butter in pubspec of skeleton project
   
 ## 0.2.0
